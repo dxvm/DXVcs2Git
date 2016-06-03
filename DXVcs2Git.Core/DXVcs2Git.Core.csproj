@@ -89,6 +89,22 @@
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.DirectoryServices.AccountManagement" />
     <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Reactive.Core, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rx-Core.2.2.5\lib\net45\System.Reactive.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reactive.Interfaces, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rx-Interfaces.2.2.5\lib\net45\System.Reactive.Interfaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reactive.Linq, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rx-Linq.2.2.5\lib\net45\System.Reactive.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reactive.PlatformServices, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rx-PlatformServices.2.2.5\lib\net45\System.Reactive.PlatformServices.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
@@ -135,9 +151,23 @@
     <Compile Include="GitLab\MergeRequestOptions.cs" />
     <Compile Include="GitLab\MergeRequestUser.cs" />
     <Compile Include="GitLab\PushHookClient.cs" />
+    <Compile Include="Git\CommandArguments.cs" />
+    <Compile Include="Git\Exceptions.cs" />
+    <Compile Include="Git\Extensions.cs" />
+    <Compile Include="Git\GitInterfaces.cs" />
+    <Compile Include="Git\GitLfsFilter.cs" />
     <Compile Include="Git\GitReaderWrapper.cs" />
     <Compile Include="Git\GitRepoConfig.cs" />
     <Compile Include="Git\GitWrapper.cs" />
+    <Compile Include="Git\NativeMethods.cs" />
+    <Compile Include="Git\ObservableProcess.cs" />
+    <Compile Include="Git\PipableObservableProcess.cs" />
+    <Compile Include="Git\ProcessManager.cs" />
+    <Compile Include="Git\ProcessStarter.cs" />
+    <Compile Include="Git\ProcessWrapper.cs" />
+    <Compile Include="Git\SafeDisposable.cs" />
+    <Compile Include="Git\StandaloneGitWrapper.cs" />
+    <Compile Include="Git\Utils.cs" />
     <Compile Include="HistoryItem.cs" />
     <Compile Include="GitLab\ProjectHookClient.cs" />
     <Compile Include="GitLab\ProjectHookTypeClient.cs" />

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 using System.Windows.Threading;
 using log4net;
@@ -18,7 +19,7 @@ namespace DXVcs2Git.Core {
             log.Info(FormatMessage(message), ex);
         }
         static string FormatMessage(string message) {
-            return String.Format("[{0}] {1}", DateTime.Now.ToLongTimeString(), message);
+            return $"[{DateTime.Now.ToLongTimeString()}] {message}";
         }
         public static void ResetErrorsAccumulator() {
             errorsAccumulator.Clear();
@@ -39,6 +40,14 @@ namespace DXVcs2Git.Core {
         }
         public static string GetErrorsAccumulatorContent() {
             return errorsAccumulator.ToString();
+        }
+        public static void DoOrWarnException(Action action, string failureMessage, params object[] args) {
+            try {
+                action();
+            }
+            catch (Exception ex) {
+                Message(string.Format(CultureInfo.InvariantCulture, failureMessage, args), ex);
+            }
         }
     }
 
